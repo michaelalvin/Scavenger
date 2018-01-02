@@ -78,7 +78,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         labelResults.isHidden = true
         faceResults.isHidden = true
         spinner.hidesWhenStopped = true
-        print(text)
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,7 +102,7 @@ extension ViewController {
             let errorObj: JSON = json["error"]
             
             self.spinner.stopAnimating()
-            self.imageView.isHidden = true
+            self.imageView.isHidden = false
             self.labelResults.isHidden = false
             self.faceResults.isHidden = false
             self.faceResults.text = ""
@@ -179,7 +178,8 @@ extension ViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
-            imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
+            imageView.isHidden = false // You could optionally display the image here by setting imageView.image = pickedImage
+            imageView.image = pickedImage
             spinner.startAnimating()
             faceResults.isHidden = true
             labelResults.isHidden = true
