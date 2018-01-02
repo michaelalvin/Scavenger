@@ -15,7 +15,6 @@
 import UIKit
 import SwiftyJSON
 
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
@@ -27,9 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var googleAPIKey = "YOUR_API_KEY"
     var googleURL: URL {
-        return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\("AIzaSyAearYVGt4qibvKtz3zYbNmDEG1FA3xgKw")")!
-        
-        
+        return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\("AIzaSyAearYVGt4qibvKtz3zYbNmDEG1FA3xgKw")")!   
     }
     
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
