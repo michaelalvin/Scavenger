@@ -49,6 +49,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidAppear(_ animated: Bool) {
         myTableViewController.reloadData()
+        checkFinished()
     }
     
     override func viewDidLoad() {
@@ -57,16 +58,55 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
     }
     
-    @IBAction func taskButtonTapped(_ sender: Any) {
+    // Check game condition
+    public func checkFinished() {
+        var finished = true
         let checkedImage = UIImage(named: "checkmark")! as UIImage
+        
+        for cell in myTableViewController.visibleCells {
+            var cell2 = cell as! CustomTableViewCell
+            
+            if(!(cell2.taskButton.image(for: .normal)?.isEqual(checkedImage))!) {
+                finished = false
+            }
+        }
+        
+        if(finished) {
+            print("You finished!")
+        } else {
+            print("You did not finish!")
+        }
+    }
+    
+    @IBOutlet weak var taskString: UILabel!
+    
+    // Move to ViewController
+    
+    var text: String?
+    var button: UIButton?
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let row = indexPath.row
+        
+        print("Row: \(row)")
+        
+        let cell = myTableViewController.cellForRow(at: indexPath) as! CustomTableViewCell
+        
+        text = cell.taskLabel.text
+        button = cell.taskButton
+        
         self.performSegue(withIdentifier: "segue1", sender: self)
     }
+    
+    // let checkedImage = UIImage(named: "checkmark")! as UIImage
 
-    //PASS DATA TO NEXT CONTROLLER
-    public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("EE")
-            //let controller = segue.destinationViewController as! ViewController
-            //controller.text = "hello"
+    // Pass data to next controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ViewController
+        dest.text = text
+        dest.button = button
     }
     
     override func didReceiveMemoryWarning() {

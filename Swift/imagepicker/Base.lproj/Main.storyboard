@@ -250,9 +250,6 @@
                                                         <constraint firstAttribute="height" constant="32" id="vh4-Xy-3pe"/>
                                                     </constraints>
                                                     <state key="normal" image="empty"/>
-                                                    <connections>
-                                                        <action selector="taskButtonTapped:" destination="ALb-Aw-4Qi" eventType="touchUpInside" id="uMP-Ye-Nx9"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -263,6 +260,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="taskButton" destination="tMz-hH-vAm" id="D0p-gi-X7O"/>
                                             <outlet property="taskLabel" destination="1lY-UD-AQj" id="acY-aa-VHS"/>
                                         </connections>
                                     </tableViewCell>

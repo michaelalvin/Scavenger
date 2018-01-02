@@ -24,12 +24,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var faceResults: UITextView!
     
+    var button: UIButton?
+    var text: String?
+    
     var googleAPIKey = "YOUR_API_KEY"
     var googleURL: URL {
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\("AIzaSyAearYVGt4qibvKtz3zYbNmDEG1FA3xgKw")")!   
     }
     
+    // MUST CHECK IF PHOTO IS VALID, IF SO CHANGE BUTTON IMAGE
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
+        let checkedImage = UIImage(named: "checkmark")! as UIImage
+        button?.setImage(checkedImage, for: .normal)
+        
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -37,8 +44,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func takePhotoButtonTappedd(_ sender: Any) {
-        print("HHHE")
-        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -73,6 +78,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         labelResults.isHidden = true
         faceResults.isHidden = true
         spinner.hidesWhenStopped = true
+        print(text)
     }
 
     override func didReceiveMemoryWarning() {

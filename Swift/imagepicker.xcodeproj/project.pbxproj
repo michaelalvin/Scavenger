@@ -15,6 +15,8 @@
 		1BFC2E881BF1AA7300885EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFC2E861BF1AA7300885EBB /* LaunchScreen.storyboard */; };
 		1BFC2E931BF1AA7300885EBB /* imagepickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E921BF1AA7300885EBB /* imagepickerTests.swift */; };
 		1BFC2E9E1BF1AA7300885EBB /* imagepickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E9D1BF1AA7300885EBB /* imagepickerUITests.swift */; };
+		43A891A81FFBF334006381AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E7F1BF1AA7300885EBB /* ImagePickerViewController.swift */; };
+		43A891A91FFBF336006381AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E7F1BF1AA7300885EBB /* ImagePickerViewController.swift */; };
 		43D0631A1FFB086D00DE790F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063191FFB086D00DE790F /* MyViewController.swift */; };
 		43D0631B1FFB086D00DE790F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063191FFB086D00DE790F /* MyViewController.swift */; };
 		43D0631C1FFB086D00DE790F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063191FFB086D00DE790F /* MyViewController.swift */; };
@@ -379,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A891A81FFBF334006381AB /* ImagePickerViewController.swift in Sources */,
 				43D0631F1FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631B1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063271FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A891A91FFBF336006381AB /* ImagePickerViewController.swift in Sources */,
 				43D063201FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631C1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063281FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,

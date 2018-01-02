@@ -12,6 +12,9 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var taskLabel: UILabel!
     
+    @IBOutlet weak var taskButton: UIButton!
+    
+    
     //@IBOutlet weak var taskButtonTapped: UIButton!
     
     override func awakeFromNib() {
