@@ -32,11 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\("AIzaSyAearYVGt4qibvKtz3zYbNmDEG1FA3xgKw")")!   
     }
     
-    // MUST CHECK IF PHOTO IS VALID, IF SO CHANGE BUTTON IMAGE
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
-        let checkedImage = UIImage(named: "checkmark")! as UIImage
-        button?.setImage(checkedImage, for: .normal)
-        
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -166,12 +162,29 @@ extension ViewController {
                         }
                     }
                     self.labelResults.text = labelResultsText
+                    self.validImage()
                 } else {
                     self.labelResults.text = "No labels found"
                 }
             }
         })
+    }
+    
+    func validImage() {
+        let lowercase = text?.lowercased()
         
+        if(labelResults.text.contains(lowercase!)) {
+            let checkedImage = UIImage(named: "checkmark")! as UIImage
+            button?.setImage(checkedImage, for: .normal)
+            
+            let alert = UIAlertController(title: "Success!", message: "You successfully found an item! :)", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Sorry!", message: "Your photo does not satisfy item description. Please try taking the photo at a better angle or take a different one :(", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // After image is chosen

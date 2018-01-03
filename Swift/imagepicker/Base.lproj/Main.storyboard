@@ -312,11 +312,46 @@
                     <connections>
                         <outlet property="myTableViewController" destination="hpF-81-enb" id="JkJ-Ln-rnv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segue1" id="wPh-pK-Fcs"/>
+                        <segue destination="R3C-sG-snZ" kind="show" identifier="seguedone" id="wrg-k0-7ay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsT-KN-Nte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456.8" y="1072.7136431784108"/>
+            <point key="canvasLocation" x="1473" y="1073"/>
+        </scene>
+        <!--Win View Controller-->
+        <scene sceneID="oXb-tB-qjJ">
+            <objects>
+                <viewController id="R3C-sG-snZ" customClass="WinViewController" customModule="imagepicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hq1-q1-T2R"/>
+                        <viewControllerLayoutGuide type="bottom" id="RRS-ia-lqo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iCz-Xg-YRD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPl-Os-3QE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="mbM-Bg-yxz"/>
+                                    <constraint firstAttribute="height" constant="667" id="u8h-vp-3Si"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gPl-Os-3QE" firstAttribute="top" secondItem="iCz-Xg-YRD" secondAttribute="top" id="V3S-8x-iDF"/>
+                            <constraint firstItem="gPl-Os-3QE" firstAttribute="leading" secondItem="iCz-Xg-YRD" secondAttribute="leading" id="tEP-dL-hwX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="celebrationImage" destination="gPl-Os-3QE" id="eTO-LQ-AIX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Sf-0F-z88" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573.5999999999999" y="1629.5352323838083"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fAK-pL-CgW">

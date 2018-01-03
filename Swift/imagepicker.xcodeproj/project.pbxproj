@@ -15,6 +15,9 @@
 		1BFC2E881BF1AA7300885EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFC2E861BF1AA7300885EBB /* LaunchScreen.storyboard */; };
 		1BFC2E931BF1AA7300885EBB /* imagepickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E921BF1AA7300885EBB /* imagepickerTests.swift */; };
 		1BFC2E9E1BF1AA7300885EBB /* imagepickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E9D1BF1AA7300885EBB /* imagepickerUITests.swift */; };
+		4351F3E41FFC6E9E000B2DEA /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */; };
+		4351F3E51FFC6E9E000B2DEA /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */; };
+		4351F3E61FFC6E9E000B2DEA /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */; };
 		43A891A81FFBF334006381AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E7F1BF1AA7300885EBB /* ImagePickerViewController.swift */; };
 		43A891A91FFBF336006381AB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC2E7F1BF1AA7300885EBB /* ImagePickerViewController.swift */; };
 		43D0631A1FFB086D00DE790F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063191FFB086D00DE790F /* MyViewController.swift */; };
@@ -66,6 +69,7 @@
 		1BFC2E9F1BF1AA7300885EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		249890A99ED0C03E4BF78770 /* Pods_imagepicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imagepicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CF979D4FE706B3A1A1DD8B /* Pods-imagepicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imagepicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-imagepicker/Pods-imagepicker.release.xcconfig"; sourceTree = "<group>"; };
+		4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		43D063191FFB086D00DE790F /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		43D0631D1FFB09B200DE790F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		43D063211FFB0A7700DE790F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				43D0631D1FFB09B200DE790F /* CustomTableViewCell.swift */,
 				43D063211FFB0A7700DE790F /* MainViewController.swift */,
 				43D063251FFB13CE00DE790F /* CheckBoxButton.swift */,
+				4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */,
 			);
 			path = imagepicker;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				43D0631A1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D0631E1FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				1BFC2E7E1BF1AA7300885EBB /* AppDelegate.swift in Sources */,
+				4351F3E41FFC6E9E000B2DEA /* WinViewController.swift in Sources */,
 				43D063261FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
 				43D063221FFB0A7700DE790F /* MainViewController.swift in Sources */,
 			);
@@ -385,6 +391,7 @@
 				43D0631F1FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631B1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063271FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
+				4351F3E51FFC6E9E000B2DEA /* WinViewController.swift in Sources */,
 				1BFC2E931BF1AA7300885EBB /* imagepickerTests.swift in Sources */,
 				43D063231FFB0A7700DE790F /* MainViewController.swift in Sources */,
 			);
@@ -398,6 +405,7 @@
 				43D063201FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631C1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063281FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
+				4351F3E61FFC6E9E000B2DEA /* WinViewController.swift in Sources */,
 				1BFC2E9E1BF1AA7300885EBB /* imagepickerUITests.swift in Sources */,
 				43D063241FFB0A7700DE790F /* MainViewController.swift in Sources */,
 			);

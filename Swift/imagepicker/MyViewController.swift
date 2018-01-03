@@ -71,11 +71,13 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }
         
+        // Game is finished
         if(finished) {
-            print("You finished!")
+            self.performSegue(withIdentifier: "seguedone", sender: self)
         } else {
-            print("You did not finish!")
+            
         }
+        
     }
     
     @IBOutlet weak var taskString: UILabel!
@@ -90,7 +92,8 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let row = indexPath.row
         
-        print("Row: \(row)")
+        // Prints row to check
+        // print("Row: \(row)")
         
         let cell = myTableViewController.cellForRow(at: indexPath) as! CustomTableViewCell
         
@@ -104,9 +107,11 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     // Pass data to next controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! ViewController
-        dest.text = text
-        dest.button = button
+            if(segue.identifier == "segue1") {
+            let dest = segue.destination as! ViewController
+            dest.text = text
+            dest.button = button
+        }
     }
     
     override func didReceiveMemoryWarning() {
