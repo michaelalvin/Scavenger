@@ -24,7 +24,7 @@ class WinViewController: UIViewController {
     @IBOutlet weak var celebrationImage: UIImageView!
     
     override func viewDidAppear(_ animated: Bool) {
-        let checkedImage = UIImage(named: "emptycolor")! as UIImage
+        let checkedImage = UIImage(named: "emptyspace")! as UIImage
         celebrationImage.image = checkedImage
 
         celebrationImage.frame = view.frame
@@ -35,7 +35,7 @@ class WinViewController: UIViewController {
     
     func imageFadeIn(imageView: UIImageView) {
 
-        let secondImageView = UIImageView(image: UIImage(named: "congrats.jpg"))
+        let secondImageView = UIImageView(image: UIImage(named: "winner"))
         secondImageView.frame = view.frame
         secondImageView.alpha = 0.0
 

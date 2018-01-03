@@ -332,17 +332,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPl-Os-3QE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="31" y="105" width="312" height="527"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="mbM-Bg-yxz"/>
-                                    <constraint firstAttribute="height" constant="667" id="u8h-vp-3Si"/>
+                                    <constraint firstAttribute="width" constant="312" id="2dP-kd-Fth"/>
+                                    <constraint firstAttribute="height" constant="527" id="nX9-xG-D3b"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8w-8z-EIp">
+                                <rect key="frame" x="150" y="393" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mx7-pS-8Zx"/>
+                                    <constraint firstAttribute="width" constant="75" id="sRH-mJ-KqB"/>
+                                </constraints>
+                                <state key="normal" title="New Game"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gPl-Os-3QE" firstAttribute="top" secondItem="iCz-Xg-YRD" secondAttribute="top" id="V3S-8x-iDF"/>
-                            <constraint firstItem="gPl-Os-3QE" firstAttribute="leading" secondItem="iCz-Xg-YRD" secondAttribute="leading" id="tEP-dL-hwX"/>
+                            <constraint firstItem="gPl-Os-3QE" firstAttribute="leading" secondItem="iCz-Xg-YRD" secondAttribute="leadingMargin" constant="15" id="0Ct-8e-JQi"/>
+                            <constraint firstItem="Y8w-8z-EIp" firstAttribute="top" secondItem="hq1-q1-T2R" secondAttribute="bottom" constant="329" id="R4I-dK-lWo"/>
+                            <constraint firstItem="gPl-Os-3QE" firstAttribute="top" secondItem="hq1-q1-T2R" secondAttribute="bottom" constant="41" id="ksR-4r-zLu"/>
+                            <constraint firstItem="Y8w-8z-EIp" firstAttribute="leading" secondItem="iCz-Xg-YRD" secondAttribute="leadingMargin" constant="134" id="l0C-OJ-JEi"/>
                         </constraints>
                     </view>
                     <connections>
