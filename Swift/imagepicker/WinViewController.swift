@@ -27,6 +27,14 @@ class WinViewController: UIViewController {
         self.performSegue(withIdentifier: "segueback", sender: self)
     }
     
+    // Pass data to next controller
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "segueback") {
+//            let dest = segue.destination as! MyViewController
+//            dest.check = true
+//        }
+//    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         let checkedImage = UIImage(named: "emptyspace")! as UIImage

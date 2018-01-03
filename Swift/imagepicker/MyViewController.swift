@@ -50,6 +50,9 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidAppear(_ animated: Bool) {
         myTableViewController.reloadData()
         checkFinished()
+//        if(check) {
+//            checkFinished()
+//        }
     }
     
     override func viewDidLoad() {
@@ -57,6 +60,8 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.title = nil;
         super.viewDidLoad()
     }
+    
+    var check = true
     
     // Check game condition
     public func checkFinished() {

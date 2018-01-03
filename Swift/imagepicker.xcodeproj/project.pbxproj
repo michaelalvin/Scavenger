@@ -32,6 +32,9 @@
 		43D063261FFB13CE00DE790F /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063251FFB13CE00DE790F /* CheckBoxButton.swift */; };
 		43D063271FFB13CE00DE790F /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063251FFB13CE00DE790F /* CheckBoxButton.swift */; };
 		43D063281FFB13CE00DE790F /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D063251FFB13CE00DE790F /* CheckBoxButton.swift */; };
+		43DC87641FFD615200B97C4B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87631FFD615200B97C4B /* StartViewController.swift */; };
+		43DC87651FFD615200B97C4B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87631FFD615200B97C4B /* StartViewController.swift */; };
+		43DC87661FFD615200B97C4B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87631FFD615200B97C4B /* StartViewController.swift */; };
 		DC6D6714E04797FA123D80F1 /* Pods_imagepicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249890A99ED0C03E4BF78770 /* Pods_imagepicker.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,7 @@
 		43D0631D1FFB09B200DE790F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		43D063211FFB0A7700DE790F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		43D063251FFB13CE00DE790F /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		43DC87631FFD615200B97C4B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D1D2D37BECBAFEFA38A63C60 /* Pods-imagepicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imagepicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imagepicker/Pods-imagepicker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 				43D063211FFB0A7700DE790F /* MainViewController.swift */,
 				43D063251FFB13CE00DE790F /* CheckBoxButton.swift */,
 				4351F3E31FFC6E9E000B2DEA /* WinViewController.swift */,
+				43DC87631FFD615200B97C4B /* StartViewController.swift */,
 			);
 			path = imagepicker;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFC2E801BF1AA7300885EBB /* ImagePickerViewController.swift in Sources */,
+				43DC87641FFD615200B97C4B /* StartViewController.swift in Sources */,
 				43D0631A1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D0631E1FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				1BFC2E7E1BF1AA7300885EBB /* AppDelegate.swift in Sources */,
@@ -388,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A891A81FFBF334006381AB /* ImagePickerViewController.swift in Sources */,
+				43DC87651FFD615200B97C4B /* StartViewController.swift in Sources */,
 				43D0631F1FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631B1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063271FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
@@ -402,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A891A91FFBF336006381AB /* ImagePickerViewController.swift in Sources */,
+				43DC87661FFD615200B97C4B /* StartViewController.swift in Sources */,
 				43D063201FFB09B200DE790F /* CustomTableViewCell.swift in Sources */,
 				43D0631C1FFB086D00DE790F /* MyViewController.swift in Sources */,
 				43D063281FFB13CE00DE790F /* CheckBoxButton.swift in Sources */,
