@@ -23,6 +23,11 @@ class WinViewController: UIViewController {
     
     @IBOutlet weak var celebrationImage: UIImageView!
     
+    @IBAction func backToMenuButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueback", sender: self)
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         let checkedImage = UIImage(named: "emptyspace")! as UIImage
         celebrationImage.image = checkedImage
