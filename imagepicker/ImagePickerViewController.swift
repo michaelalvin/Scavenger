@@ -14,10 +14,14 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
+    let ref = Database.database().reference()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -174,8 +178,17 @@ extension ViewController {
         let lowercase = text?.lowercased()
         
         if(labelResults.text.contains(lowercase!)) {
-            let checkedImage = UIImage(named: "checkmark")! as UIImage
-            button?.setImage(checkedImage, for: .normal)
+//            let checkedImage = UIImage(named: "checkmark")! as UIImage
+//            button?.setImage(checkedImage, for: .normal)
+            let rowstringval = String(currentRow)
+            
+            if let uid = Auth.auth().currentUser?.uid {
+                let key = ref.child("users").child(uid).child("truth").child(rowstringval)
+                key.setValue("1")
+            } else {
+                let key = ref.child("users").child(gamecode).child("truth").child(rowstringval)
+                key.setValue("1")
+            }
             
             let alert = UIAlertController(title: "Success!", message: "You successfully found an item! :)", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))

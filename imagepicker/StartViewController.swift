@@ -10,8 +10,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+var gamecode = "0"
+
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var gameCodeTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true;
         super.viewDidLoad()
@@ -24,6 +29,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func startGameButton(_ sender: Any) {
+        gamecode = gameCodeTextField.text!
         self.performSegue(withIdentifier: "startsegue", sender: self)
     }
     
@@ -41,7 +47,7 @@ class StartViewController: UIViewController {
             
             if user != nil {
                 let databaseRef = Database.database().reference()
-                let userInfo = ["email": testString, "uid": user?.uid, "list": [String](), "username": "scavengerplayer"] as [String : Any]
+                let userInfo = ["email": testString, "uid": user?.uid, "list": [String](), "truth": [String](), "username": "scavengerplayer"] as [String : Any]
                 let userRef = databaseRef.child("users").child((user?.uid)!)
                 userRef.setValue(userInfo)
                 

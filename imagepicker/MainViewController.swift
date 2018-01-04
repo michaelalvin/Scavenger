@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 var list = [String]()
+var truth = [String]()
 
 class MainViewController: UIViewController {
 
@@ -25,22 +29,38 @@ class MainViewController: UIViewController {
     @IBAction func startHuntButtonTapped(_ sender: Any) {
         if(itemOne.text != ""){
             list.append(itemOne.text!)
+            truth.append("0")
         }
         
         if(itemTwo.text != ""){
             list.append(itemTwo.text!)
+            truth.append("0")
         }
         
         if(itemThree.text != ""){
             list.append(itemThree.text!)
+            truth.append("0")
         }
         
         if(itemFour.text != ""){
             list.append(itemFour.text!)
+            truth.append("0")
         }
         
         if(itemFive.text != ""){
             list.append(itemFive.text!)
+            truth.append("0")
+        }
+        
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            let ref = Database.database().reference()
+            
+            var key = ref.child("users").child(uid).child("list")
+            key.setValue(list)
+            
+            key = ref.child("users").child(uid).child("truth")
+            key.setValue(truth)
         }
     }
     

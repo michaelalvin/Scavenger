@@ -17,13 +17,19 @@ import UIKit
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+
+var currentRow = 0
 
 class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var myTableViewController: UITableView!
     
     @IBOutlet weak var userIDLabel: UILabel!
+    
+    @IBOutlet weak var spinner2: UIActivityIndicatorView!
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (list.count)
@@ -51,16 +57,127 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        myTableViewController.reloadData()
-        checkFinished()
-//        if(check) {
-//            checkFinished()
-//        }
+        spinner2.startAnimating()
+        
+        reloadListValues()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            // Put your code which should be executed with a delay here
+            self.reloadButtonImage()
+        })
+        
+        spinner2.stopAnimating()
     }
+    
+    public func reloadListValues() {
+        let ref = Database.database().reference()
+        
+        list = [String]()
+        
+        // If this is initial user
+        if let uid = Auth.auth().currentUser?.uid {
+            // Reload list from Firebase
+            ref.child("users").child(uid).child("list").observe(.childAdded, with: {
+                snapshot in
+                
+                if let item = snapshot.value as? String {
+                    list.append(item)
+                    self.myTableViewController.reloadData()
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        } else {
+            // Reload from uid
+            ref.child("users").child(gamecode).child("list").observe(.childAdded, with: {
+                snapshot in
+                
+                if let item = snapshot.value as? String {
+                    list.append(item)
+                    self.myTableViewController.reloadData()
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    public func reloadButtonImage() {
+        let ref = Database.database().reference()
+        
+        // Reload truth from Firebase, set the label image to red/green
+        if let uid = Auth.auth().currentUser?.uid {
+            var count = 0
+            let checkedImage = UIImage(named: "checkmark")! as UIImage
+            let uncheckedImage = UIImage(named: "empty")! as UIImage
+            ref.child("users").child(uid).child("truth").observe(.childAdded, with: {
+                snapshot in
+
+                if let item = snapshot.value as? String {
+                    let indexPath = IndexPath(row: count, section: 0)
+                    let cell = self.myTableViewController.cellForRow(at: indexPath)
+                    
+//                    if(cell != nil) {
+                        let customcell = cell as! CustomTableViewCell
+
+                        if(item == "0") {
+                            customcell.taskButton.setImage(uncheckedImage, for: .normal)
+                        } else {
+                            customcell.taskButton.setImage(checkedImage, for: .normal)
+                        }
+                        self.checkFinished()
+                        count = count + 1
+//                    }
+                }
+
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        } else {
+            // Reload from uid
+            var count = 0
+            let checkedImage = UIImage(named: "checkmark")! as UIImage
+            let uncheckedImage = UIImage(named: "empty")! as UIImage
+            ref.child("users").child(gamecode).child("truth").observe(.childAdded, with: {
+                snapshot in
+                
+                if let item = snapshot.value as? String {
+                    let indexPath = IndexPath(row: count, section: 0)
+                    let cell = self.myTableViewController.cellForRow(at: indexPath)
+                    
+//                    if(cell != nil) {
+                        let customcell = cell as! CustomTableViewCell
+                        
+                        if(item == "0") {
+                            customcell.taskButton.setImage(uncheckedImage, for: .normal)
+                        } else {
+                            customcell.taskButton.setImage(checkedImage, for: .normal)
+                        }
+                        self.checkFinished()
+                        count = count + 1
+//                    }
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+//    func again(cell: UITableViewCell?) {
+//        if cell != nil {
+//            let customcell = cell as! CustomTableViewCell
+//            return customcell
+//        }
+//    }
+    
     
     override func viewDidLoad() {
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         self.title = nil
+        spinner2.hidesWhenStopped = true
         super.viewDidLoad()
         
         if let uid = Auth.auth().currentUser?.uid {
@@ -76,7 +193,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let checkedImage = UIImage(named: "checkmark")! as UIImage
         
         for cell in myTableViewController.visibleCells {
-            var cell2 = cell as! CustomTableViewCell
+            let cell2 = cell as! CustomTableViewCell
             
             if(!(cell2.taskButton.image(for: .normal)?.isEqual(checkedImage))!) {
                 finished = false
@@ -103,6 +220,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.deselectRow(at: indexPath, animated: true)
         
         let row = indexPath.row
+        currentRow = row
         
         // Prints row to check
         // print("Row: \(row)")
